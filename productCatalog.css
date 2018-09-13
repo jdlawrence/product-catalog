@@ -1,5 +1,11 @@
 .pc {
   font-size: 22px;
 }
+.pc__text {
+  margin-bottom: 15px;
+}
+.pc__header-row-item {
+  width: 175px;
+}
 
 /*# sourceMappingURL=productCatalog.css.map */

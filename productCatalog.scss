@@ -1,3 +1,12 @@
 .pc {
   font-size: 22px;
+
+  &__text {
+    margin-bottom: 15px;
+  }
+
+
+  &__header-row-item {
+    width: 175px;
+  }
 }
