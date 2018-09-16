@@ -15,12 +15,10 @@ document.addEventListener("DOMContentLoaded", function() {
     displayExaminedProduct(id);
 
     api.searchProductsById(id).then(product => {
-      console.log('id', product);
       Promise.all([
         api.searchProductsByPrice(product.price, 30),
         api.searchProductsByType(product.type),
       ]).then(result => {
-        console.log('result', api.getIntersectionById(result[0], result[1]));
         let sameTypeSimilarPrice = api.getIntersectionById(result[0], result[1]);
 
         // Remove the original result from the similar results

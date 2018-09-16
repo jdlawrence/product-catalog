@@ -13,9 +13,12 @@
 
     <div class="pc__search-by-id">
       <h3 class="pc__search-header">Search Product by Id</h3>
-      <form class="pc__input-form">
+      <form class="pc__input-form" id="prod-id-form">
         <input type="text" name="prod-id" required>
-        <button>Search Product</button>
+        <button class="pc__input-button"
+                form="prod-id-form"
+                type="submit"
+                value="Submit">Search Product</button>
       </form>
     </div>
     <div class="pc__examined-product">

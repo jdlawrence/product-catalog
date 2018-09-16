@@ -34,10 +34,15 @@ const api = {
     });
   },
   searchProductsById(id) {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve(catalogData[id - 1]);
-      }, Math.random() * 250);
+    return new Promise((resolve, reject) => {
+      if (typeof id === 'number' && id >= 0 && id < CATALOG_SIZE) {
+
+        setTimeout(() => {
+          resolve(catalogData[id - 1]);
+        }, Math.random() * 250);
+      } else {
+        reject('Enter a valid id!!');
+      }
     });
   },
   searchProductsByType(type) {
