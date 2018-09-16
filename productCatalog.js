@@ -1,107 +1,98 @@
-const catalogData =
-  [ { ProductId: 1, Type: 'Clothing', Price: '235.76' },
-  { ProductId: 2, Type: 'Clothing', Price: '286.19' },
-  { ProductId: 3, Type: 'Food', Price: '158.56' },
-  { ProductId: 4, Type: 'Food', Price: '241.09' },
-  { ProductId: 5, Type: 'Electronics', Price: '339.86' },
-  { ProductId: 6, Type: 'Food', Price: '50.17' },
-  { ProductId: 7, Type: 'Clothing', Price: '434.28' },
-  { ProductId: 8, Type: 'Electronics', Price: '40.25' },
-  { ProductId: 9, Type: 'Clothing', Price: '404.74' },
-  { ProductId: 10, Type: 'Electronics', Price: '310.23' },
-  { ProductId: 11, Type: 'Book', Price: '25.49' },
-  { ProductId: 12, Type: 'Food', Price: '162.20' },
-  { ProductId: 13, Type: 'Book', Price: '339.83' },
-  { ProductId: 14, Type: 'Book', Price: '240.83' },
-  { ProductId: 15, Type: 'Clothing', Price: '294.51' },
-  { ProductId: 16, Type: 'Food', Price: '302.89' },
-  { ProductId: 17, Type: 'Food', Price: '111.10' },
-  { ProductId: 18, Type: 'Food', Price: '261.73' },
-  { ProductId: 19, Type: 'Book', Price: '9.24' },
-  { ProductId: 20, Type: 'Food', Price: '165.62' },
-  { ProductId: 21, Type: 'Book', Price: '218.40' },
-  { ProductId: 22, Type: 'Electronics', Price: '145.52' },
-  { ProductId: 23, Type: 'Book', Price: '274.84' },
-  { ProductId: 24, Type: 'Book', Price: '341.63' },
-  { ProductId: 25, Type: 'Clothing', Price: '96.87' },
-  { ProductId: 26, Type: 'Electronics', Price: '225.35' },
-  { ProductId: 27, Type: 'Electronics', Price: '290.86' },
-  { ProductId: 28, Type: 'Book', Price: '147.28' },
-  { ProductId: 29, Type: 'Clothing', Price: '222.57' },
-  { ProductId: 30, Type: 'Clothing', Price: '212.36' },
-  { ProductId: 31, Type: 'Book', Price: '280.64' },
-  { ProductId: 32, Type: 'Book', Price: '451.09' },
-  { ProductId: 33, Type: 'Clothing', Price: '293.52' },
-  { ProductId: 34, Type: 'Electronics', Price: '341.46' },
-  { ProductId: 35, Type: 'Book', Price: '67.49' },
-  { ProductId: 36, Type: 'Book', Price: '423.04' },
-  { ProductId: 37, Type: 'Book', Price: '471.21' },
-  { ProductId: 38, Type: 'Food', Price: '101.85' },
-  { ProductId: 39, Type: 'Electronics', Price: '374.85' },
-  { ProductId: 40, Type: 'Clothing', Price: '137.64' },
-  { ProductId: 41, Type: 'Food', Price: '338.92' },
-  { ProductId: 42, Type: 'Clothing', Price: '390.38' },
-  { ProductId: 43, Type: 'Food', Price: '313.18' },
-  { ProductId: 44, Type: 'Electronics', Price: '415.14' },
-  { ProductId: 45, Type: 'Electronics', Price: '73.18' },
-  { ProductId: 46, Type: 'Clothing', Price: '245.32' },
-  { ProductId: 47, Type: 'Electronics', Price: '237.78' },
-  { ProductId: 48, Type: 'Clothing', Price: '273.60' },
-  { ProductId: 49, Type: 'Clothing', Price: '156.53' },
-  { ProductId: 50, Type: 'Book', Price: '380.47' },
-  { ProductId: 51, Type: 'Book', Price: '41.10' },
-  { ProductId: 52, Type: 'Book', Price: '322.13' },
-  { ProductId: 53, Type: 'Electronics', Price: '133.24' },
-  { ProductId: 54, Type: 'Book', Price: '296.73' },
-  { ProductId: 55, Type: 'Food', Price: '210.05' },
-  { ProductId: 56, Type: 'Electronics', Price: '111.84' },
-  { ProductId: 57, Type: 'Food', Price: '53.04' },
-  { ProductId: 58, Type: 'Electronics', Price: '15.65' },
-  { ProductId: 59, Type: 'Electronics', Price: '138.17' },
-  { ProductId: 60, Type: 'Book', Price: '5.11' },
-  { ProductId: 61, Type: 'Electronics', Price: '166.75' },
-  { ProductId: 62, Type: 'Clothing', Price: '313.52' },
-  { ProductId: 63, Type: 'Food', Price: '195.36' },
-  { ProductId: 64, Type: 'Food', Price: '266.49' },
-  { ProductId: 65, Type: 'Book', Price: '464.81' },
-  { ProductId: 66, Type: 'Food', Price: '283.72' },
-  { ProductId: 67, Type: 'Food', Price: '191.25' },
-  { ProductId: 68, Type: 'Food', Price: '185.00' },
-  { ProductId: 69, Type: 'Food', Price: '460.99' },
-  { ProductId: 70, Type: 'Book', Price: '440.97' },
-  { ProductId: 71, Type: 'Food', Price: '167.10' },
-  { ProductId: 72, Type: 'Book', Price: '240.73' },
-  { ProductId: 73, Type: 'Electronics', Price: '324.80' },
-  { ProductId: 74, Type: 'Book', Price: '392.09' },
-  { ProductId: 75, Type: 'Food', Price: '332.32' },
-  { ProductId: 76, Type: 'Food', Price: '53.20' },
-  { ProductId: 77, Type: 'Book', Price: '313.83' },
-  { ProductId: 78, Type: 'Clothing', Price: '150.19' },
-  { ProductId: 79, Type: 'Book', Price: '299.70' },
-  { ProductId: 80, Type: 'Food', Price: '222.51' },
-  { ProductId: 81, Type: 'Electronics', Price: '480.18' },
-  { ProductId: 82, Type: 'Electronics', Price: '375.25' },
-  { ProductId: 83, Type: 'Electronics', Price: '447.10' },
-  { ProductId: 84, Type: 'Book', Price: '199.13' },
-  { ProductId: 85, Type: 'Food', Price: '320.78' },
-  { ProductId: 86, Type: 'Clothing', Price: '215.33' },
-  { ProductId: 87, Type: 'Book', Price: '81.92' },
-  { ProductId: 88, Type: 'Electronics', Price: '396.79' },
-  { ProductId: 89, Type: 'Food', Price: '301.18' },
-  { ProductId: 90, Type: 'Electronics', Price: '457.14' } ];
-
 document.addEventListener("DOMContentLoaded", function() {
   // this function runs when the DOM is ready, i.e. when the document has been parsed
-  const headerRow = document.querySelector('.pc__table');
-  console.log('headerRow', headerRow);
+  const allDataTableElem = document.querySelector('.pc__all-data-table');
+  const examinedProduct = document.querySelector('.pc__examined-product-details');
+  const productIdInput = document.querySelector('.pc__input-form');
+  const similarProductsTableElem = document.querySelector('.pc__similar-products-table');
 
-  catalogData.forEach((datum) => {
-    headerRow.innerHTML += `<tr>
-    <td>${datum.ProductId}</td>
-    <td>${datum.Type}</td>
-    <td>${datum.Price}</td>
-    <td><button>Examine</button></td>
-    </tr>
-    `;
+  productIdInput.addEventListener('submit', (e) => {
+    e.preventDefault();
+    displaySingleProduct(e.target[0].value);
   });
+
+  const displaySingleProduct = (id) => {
+    id = parseInt(id);
+    displayExaminedProduct(id);
+
+    api.searchProductsById(id).then(product => {
+      console.log('id', product);
+      Promise.all([
+        api.searchProductsByPrice(product.price, 30),
+        api.searchProductsByType(product.type),
+      ]).then(result => {
+        console.log('result', api.getIntersectionById(result[0], result[1]));
+        let sameTypeSimilarPrice = api.getIntersectionById(result[0], result[1]);
+
+        // Remove the original result from the similar results
+        sameTypeSimilarPrice = sameTypeSimilarPrice.filter(item => item.productId !== id);
+
+        displaySimilarProducts(sameTypeSimilarPrice);
+      });
+    });
+  };
+
+  api.searchAllProducts().then(allProducts => {
+    displayAllProducts(allProducts);
+  });
+
+  const appendProductsToTable = (tableElement, products) => {
+    tableElement.innerHTML = `
+    <th class="pc__table-item">ProductId</th>
+    <th class="pc__table-item">Type</th>
+    <th class="pc__table-item">Price</th>
+    <th class="pc__table-item">Examine</th>
+    `;
+    products.forEach((datum) => {
+      // Create a row
+      let row = document.createElement('tr');
+
+      // Create table data cells for the productId, type, and Price
+      let productId = document.createElement('td');
+      productId.classList.add('pc__table-item');
+      productId.innerHTML = datum.productId;
+      let type = document.createElement('td');
+      type.classList.add('pc__table-item');
+      type.innerHTML = datum.type;
+      let price = document.createElement('td');
+      price.classList.add('pc__table-item');
+      price.innerHTML = datum.price;
+
+      // Create a button, and attach data attributes and a listener on it
+      let examineButton = document.createElement('button');
+      examineButton.innerHTML = 'Examine';
+      examineButton.setAttribute('data-prod-id', datum.productId);
+      examineButton.addEventListener('click', (e) => {
+        displaySingleProduct(e.target.dataset.prodId);
+      });
+      let examineButtonDiv = document.createElement('div');
+      examineButtonDiv.classList.add('pc__examine-button');
+      examineButtonDiv.appendChild(examineButton);
+
+      row.appendChild(productId);
+      row.appendChild(type);
+      row.appendChild(price);
+      row.appendChild(examineButtonDiv);
+
+      tableElement.appendChild(row);
+    });
+  };
+
+  const displayAllProducts = (productCatalog) => {
+    appendProductsToTable(allDataTableElem, productCatalog);
+  };
+
+  // Display a product that has been clicked on
+  const displayExaminedProduct = (productId) => {
+    api.searchProductsById(productId).then(item => {
+      examinedProduct.innerHTML = `
+      <p class="pc__examined-product-detail">Product Id: ${item.productId}</p>
+      <p class="pc__examined-product-detail">Price: ${item.price}</p>
+      <p class="pc__examined-product-detail">Type: ${item.type}</p>
+    `;
+    });
+  };
+
+  const displaySimilarProducts = (similarProductsArr) => {
+    appendProductsToTable(similarProductsTableElem, similarProductsArr);
+  };
 });

@@ -1,12 +1,43 @@
 .pc {
-  font-size: 22px;
+  font-size: 20px;
+
+  // Reset user agent margins because they're enormous
+  h3 {
+    margin: 3px 0;
+  }
 
   &__text {
     margin-bottom: 15px;
   }
 
+  &__table-item {
+    width: 175px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  &__search-by-id {
+    margin-bottom: 10px;
+  }
 
   &__header-row-item {
-    width: 175px;
+  }
+
+  &__examined-product {
+    margin-bottom: 10px;
+  }
+
+  &__examined-product-detail {
+    font-size: 16px;
+    margin: 4px 0;
+  }
+
+  &__all-data {
+    margin-bottom: 10px;
+  }
+
+  &__examine-button {
+    display: flex;
+    justify-content: center;
   }
 }

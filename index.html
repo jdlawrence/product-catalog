@@ -3,6 +3,7 @@
   <head>
     <title>Product Catalog by Smooth</title>
     <link rel="stylesheet" type="text/css" href="productCatalog.css">
+    <script src="library.js"></script>
     <script src="productCatalog.js"></script>
   </head>
   <body class="pc">
@@ -10,13 +11,38 @@
       Welcome to my product catalog
     </h1>
 
-    <table class="pc__table">
-      <tr class="header__row">
-        <th class="pc__header-row-item">ProductId</th>
-        <th class="pc__header-row-item">Type</th>
-        <th class="pc__header-row-item">Price</th>
-        <th class="pc__header-row-item">Examine</th>
-      </tr>
-    </table>
+    <div class="pc__search-by-id">
+      <h3 class="pc__search-header">Search Product by Id</h3>
+      <form class="pc__input-form">
+        <input type="text" name="prod-id" required>
+        <button>Search Product</button>
+      </form>
+    </div>
+    <div class="pc__examined-product">
+      <h3 class="pc__examined-product-header">Examined Product</h3>
+      <div class="pc__examined-product-details"></div>
+    </div>
+    <div class="pc__similar-products">
+      <h3 class="pc__similar-products-header">Similar Products</h3>
+      <table class="pc__similar-products-table">
+        <tr class="pc__similar-products-details"></tr>
+          <th class="pc__header-row-item pc__table-item">ProductId</th>
+          <th class="pc__header-row-item pc__table-item">Type</th>
+          <th class="pc__header-row-item pc__table-item">Price</th>
+          <th class="pc__header-row-item pc__table-item">Examine</th>
+        </tr>
+      </table>
+    </div>
+    <div class="pc__all-data">
+      <h3 class="pc__all-data-header">All Products</h3>
+      <table class="pc__all-data-table">
+        <tr class="header__row">
+          <th class="pc__header-row-item pc__table-item">ProductId</th>
+          <th class="pc__header-row-item pc__table-item">Type</th>
+          <th class="pc__header-row-item pc__table-item">Price</th>
+          <th class="pc__header-row-item pc__table-item">Examine</th>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>

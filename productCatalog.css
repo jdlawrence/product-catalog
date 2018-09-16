@@ -1,11 +1,33 @@
 .pc {
-  font-size: 22px;
+  font-size: 20px;
+}
+.pc h3 {
+  margin: 3px 0;
 }
 .pc__text {
   margin-bottom: 15px;
 }
-.pc__header-row-item {
+.pc__table-item {
   width: 175px;
+  text-align: center;
+  font-size: 16px;
+}
+.pc__search-by-id {
+  margin-bottom: 10px;
+}
+.pc__examined-product {
+  margin-bottom: 10px;
+}
+.pc__examined-product-detail {
+  font-size: 16px;
+  margin: 4px 0;
+}
+.pc__all-data {
+  margin-bottom: 10px;
+}
+.pc__examine-button {
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=productCatalog.css.map */
