@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const examinedProduct = document.querySelector('.pc__examined-product-details');
   const productIdInput = document.querySelector('.pc__input-form');
   const similarProductsTableElem = document.querySelector('.pc__similar-products-table');
+  const inputError = document.querySelector('.pc__input-error');
 
   productIdInput.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -26,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         displaySimilarProducts(sameTypeSimilarPrice);
       });
+    }).catch(error => {
+      // this error will be caught be we will handle is elsewhere
     });
   };
 
@@ -82,11 +85,15 @@ document.addEventListener("DOMContentLoaded", function() {
   // Display a product that has been clicked on
   const displayExaminedProduct = (productId) => {
     api.searchProductsById(productId).then(item => {
+      inputError.innerHTML = '';
       examinedProduct.innerHTML = `
       <p class="pc__examined-product-detail">Product Id: ${item.productId}</p>
       <p class="pc__examined-product-detail">Price: ${item.price}</p>
       <p class="pc__examined-product-detail">Type: ${item.type}</p>
     `;
+    }).catch(error => {
+      console.log('error', error);
+      inputError.innerHTML = error;
     });
   };
 
